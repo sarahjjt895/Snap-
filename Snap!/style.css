@@ -1,0 +1,187 @@
+@font-face {
+    font-family: abaddon;
+    src: url('resources/abaddon-fonts/Abaddon-Light.ttf');
+}
+
+body {
+    font-family: abaddon;
+    background-color: rgb(82, 82, 82);
+}
+
+header h1 {
+    font-size: 4em;
+    margin: 1em;
+}
+
+
+.progress-bar-outer-container {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.6fr 1.8fr 0.6fr;
+    grid-template-rows: 0.3fr 2.2fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "game-menu game-menu game-menu"
+        "deck playing-board discard"
+        "player-points player-controls opponent-points";
+}
+
+.game-menu {
+    grid-area: game-menu;
+}
+
+.game-menu input {
+    font-family: abaddon;
+    font-size: large;
+    padding: .5em;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.playing-board {
+    grid-area: playing-board;
+    margin: 3em;
+    padding: 3em;
+}
+
+.card-border {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: antiquewhite;
+    background: grey;
+    border-style: double;
+    padding: 2em;
+    width: fit-content;
+}
+
+.playing-board p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.player-points {
+    grid-area: player-points;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.player-points p,
+.opponent-points p {
+    padding: 2em;
+    font-size: large;
+}
+
+.score {
+    font-size: x-large;
+    background: steelblue;
+    border-style: double;
+}
+
+.player-controls {
+    grid-area: player-controls;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6em;
+}
+
+.player-controls input {
+    font-size: large;
+    font-family: abaddon;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+
+#winnerLoser {
+    margin-bottom: 10px;
+    font-size: 4em;
+}
+
+
+.opponent-points {
+    grid-area: opponent-points;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.opponent-points .score {
+    color: antiquewhite;
+    background: maroon;
+}
+
+.deck {
+    grid-area: deck;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.discard {
+    grid-area: discard;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deck p,
+.discard p {
+    padding: 0.5em;
+}
+
+.deck .score,
+.discard .score {
+    color: antiquewhite;
+    background: grey;
+}
+
+/* Progress bar */
+/* edited from source: https://codepen.io/alvarotrigo/pen/RwLWxBB */
+
+.progress-bar-outer-container {
+    margin: 5em auto;
+    margin-top: 3em;
+    width: 10em;
+    /* position: relative; */
+}
+
+.progress2 {
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.progress-bar2 {
+    height: 18px;
+    border-radius: 30px;
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+}
+
+.progress-moved .progress-bar2 {
+    background-color: #f3c623;
+    animation: progress 2s;
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+        background: #f9bcca;
+    }
+
+    100% {
+        width: 100%;
+        background: #f3c623;
+        box-shadow: 0 0 40px #f3c623;
+    }
+}
